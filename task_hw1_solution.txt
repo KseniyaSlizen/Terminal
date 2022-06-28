@@ -1,0 +1,88 @@
+Необходимо выполнить следующие пункты задания:
+
+1) Посмотреть где я
+$ pwd
+
+2) Создать папку
+$ mkdir app
+
+3) Зайти в папку
+$ cd app
+
+4) Создать 3 папки
+$ mkdir app1 app2 app3
+
+5) Зайти в любоую папку
+$ cd app1
+
+6) Создать 5 файлов (3 txt, 2 json)
+$ touch first.txt second.txt third.txt first.json second.json
+
+7) Создать 3 папки
+$ mkdir app1_1 app1_2 app1_3
+
+8) Вывести список содержимого папки
+$ ls -la
+
+9) Открыть любой txt файл
+$ nano first.txt
+
+10) Написать туда что-нибудь, любой текст.
+вводим текст в режиме редактирования
+
+11) Сохранить и выйти.
+Ctrl+x, y
+
+12) Выйти из папки на уровень выше
+$ cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+$ mv app1/{first.txt,second.txt} app2
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+$ cp app2/{first.txt,second.txt} app3
+
+15) Найти файл по имени
+$ find . -name first
+
+16) просмотреть содержимое в реальном времени.
+$ tail -f first.txt
+
+17) вывести несколько первых строк из текстового файла
+$ head -n2 first.txt
+ 
+18) вывести несколько последних строк из текстового файла
+$ tail -n4 first.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+& less first.txt
+
+20) вывести дату и время
+& date
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+$curl http://162.55.220.72:5005/terminal-hw-request
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+#!/bin/bash
+
+mkdir script
+cd script
+mkdir script1 script2 script3
+cd script1
+touch text.txt text2.txt text3.txt file1.json file2.json
+mkdir folder1 folder2
+echo "in the folder script:"
+ls -la
+cd ..
+mv script1/text.txt script2/
+mv script1/text2.txt script2/
+echo "in the folder script2:"
+ls script2/
+echo "done"
+
